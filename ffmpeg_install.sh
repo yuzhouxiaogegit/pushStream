@@ -53,9 +53,9 @@ make && make install
 # 配置变量
 echo 'export PATH=$PATH:/usr/local/ffmpeg/bin'>>/etc/profile
 
+cd
 rm -rf yasm-1.3*
 rm -rf ffmpeg-${ffmpegVersion}*
 
 echoTxtColor "ffmpeg 安装完成" "green"
 exit
-
