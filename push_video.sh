@@ -1,8 +1,15 @@
 #!/bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
 
-# 前提条件, 开发环境为 centos 7 
-# 1、ffmpeg	下载地址：https://github.com/BtbN/FFmpeg-Builds/releases ， 需要手动安装
-# 2、m3u8-linux-amd64	下载地址：https://github.com/llychao/m3u8-downloader/releases , 脚本会判断如果没有就去下载
+#=================================================
+#	System Required: CentOS 6/7/8
+#	Description: 视频推流脚本
+#	Version: 1.0
+#	Author: 宇宙小哥
+#	github: https://github.com/yuzhouxiaogegit/pushStream
+# 	ffmpeg	下载地址：https://github.com/BtbN/FFmpeg-Builds/releases ， 需要手动安装
+#=================================================
 
 #多少位的系统
 #bitNum=$(getconf LONG_BIT)
@@ -109,6 +116,8 @@ fi
 
 
 ffmpeg -re -i ${videoName} -c:v copy -c:a aac -b:a 192k -strict -2 -f flv ${rtmp}
-#rm -rf ${videoName}
+rm -rf ${videoName}
+
+echoTxtColor "您的视频已推送完成！" "green"
 
 exit
