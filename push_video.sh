@@ -116,6 +116,6 @@ fi
 ffmpeg -re -i ${videoName} -c:v copy -c:a aac -b:a 192k -strict -2 -f flv ${rtmp}
 rm -rf ${videoName}
 
-echoTxtColor "您的视频已推送完成！" "green"
+echoTxtColor "您的视频已推送已结束！" "green"
 
 exit
