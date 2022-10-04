@@ -52,6 +52,7 @@ make && make install
 
 # 配置变量
 echo 'export PATH=$PATH:/usr/local/ffmpeg/bin'>>/etc/profile
+source /etc/profile
 
 cd
 rm -rf yasm-1.3.0.tar.gz
