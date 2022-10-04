@@ -34,7 +34,7 @@ read -p "请输入你要下载ffmpeg的版本号，(直接回车下载5.1版本)
 if [[ $ffmpegVersion = "" ]]; then
 	ffmpegVersion="5.1"
 fi
-
+cd
 # 安装编译工具 yasm
 wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
 tar -zxvf yasm-1.3.0.tar.gz
@@ -54,5 +54,8 @@ make && make install
 echo 'export PATH=$PATH:/usr/local/ffmpeg/bin'>>/etc/profile
 
 cd
+rm -rf yasm-1.3.0.tar.gz
+rm -rf ffmpeg-${ffmpegVersion}.tar.gz
+
 echoTxtColor "ffmpeg 安装完成" "green"
 exit
