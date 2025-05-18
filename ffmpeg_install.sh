@@ -39,7 +39,7 @@ getNewVersionNum(){
 
 cd
 # 安装编译工具 yasm
-yasmVersion=getNewVersionNum 'http://www.tortall.net/projects/yasm/releases/' 'yasm' # 获取yasm最新版本号
+yasmVersion=$(getNewVersionNum 'http://www.tortall.net/projects/yasm/releases/' 'yasm') # 获取yasm最新版本号
 wget http://www.tortall.net/projects/yasm/releases/yasm-${yasmVersion}.tar.gz
 tar -zxvf yasm-${yasmVersion}.tar.gz
 cd yasm-${yasmVyasmVersion}
@@ -48,7 +48,7 @@ make && make install
 
 # 下载并且安装 ffmpeg
 cd
-ffmpegVersion=getNewVersionNum 'http://www.ffmpeg.org/releases/' 'ffmpeg' # 获取yasm最新版本号
+ffmpegVersion=$(getNewVersionNum 'http://www.ffmpeg.org/releases/' 'ffmpeg') # 获取yasm最新版本号
 wget http://www.ffmpeg.org/releases/ffmpeg-${ffmpegVersion}.tar.gz
 tar -zxvf ffmpeg-${ffmpegVersion}.tar.gz
 cd ffmpeg-${ffmpegVersion}
