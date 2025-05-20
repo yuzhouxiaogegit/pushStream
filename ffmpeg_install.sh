@@ -67,7 +67,7 @@ echo 'export PATH=$PATH:/usr/local/ffmpeg/bin'>>/etc/profile
 source /etc/profile
 
 cd
-rm -rf yasm-1.3.0.tar.gz
+rm -rf yasm-${yasmVersion}.tar.gz
 rm -rf ffmpeg-${ffmpegVersion}.tar.gz
 echoTxtColor "ffmpeg 安装完成" "green"
 exit
