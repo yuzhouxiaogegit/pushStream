@@ -144,7 +144,8 @@ install_ffmpeg_src(){
         "ffmpeg-${version}.tar.gz"
     tar -zxf "ffmpeg-${version}.tar.gz"
     cd "ffmpeg-${version}"
-    ./configure --prefix="${FFMPEG_INSTALL_PREFIX}" --enable-gpl --enable-nonfree
+    ./configure --prefix="${FFMPEG_INSTALL_PREFIX}" --enable-gpl --enable-nonfree \
+        || ./configure --prefix="${FFMPEG_INSTALL_PREFIX}" --enable-gpl --enable-nonfree --disable-x86asm
     make -j"$(nproc)" && make install
     cd ..
     echoTxtColor "ffmpeg 编译完成" "green"
@@ -166,7 +167,7 @@ cmd_install_ffmpeg(){
 
     detect_arch
     echoTxtColor "安装编译依赖..." "yellow"
-    pkg_install wget tar gcc make yasm
+    pkg_install wget tar gcc make yasm nasm
 
     local WORK_DIR
     WORK_DIR=$(mktemp -d)
